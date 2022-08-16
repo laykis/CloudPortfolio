@@ -80,4 +80,11 @@ public class Content {
         return contentDTO;
 
     }
+
+    public void updateContent(ContentDTO contentDTO){
+        this.title = contentDTO.getTitle();
+        this.content = contentDTO.getContent();
+        this.tag = contentDTO.getTag();
+        this.contentPortfolio = contentDTO.getContentPortfolio();
+    }
 }
