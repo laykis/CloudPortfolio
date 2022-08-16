@@ -1,5 +1,6 @@
 package WK.Lab.Entity;
 
+import WK.Lab.DTO.ContentDTO;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -65,5 +66,18 @@ public class Content {
         this.content = builder.content;
         this.tag = builder.tag;
         this.contentPortfolio = builder.contentPortfolio;
+    }
+
+    public ContentDTO convert(Content content){
+        ContentDTO contentDTO = new ContentDTO();
+
+        contentDTO.setCid(content.getCid());
+        contentDTO.setTitle(content.getTitle());
+        contentDTO.setContent(content.getContent());
+        contentDTO.setTag(content.getTag());
+        contentDTO.setContentPortfolio(content.getContentPortfolio());
+
+        return contentDTO;
+
     }
 }

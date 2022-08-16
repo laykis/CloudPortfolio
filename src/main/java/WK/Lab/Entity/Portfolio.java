@@ -1,5 +1,6 @@
 package WK.Lab.Entity;
 
+import WK.Lab.DTO.PortfolioDTO;
 import lombok.Getter;
 import org.springframework.security.core.parameters.P;
 
@@ -46,4 +47,16 @@ public class Portfolio {
         this.member = builder.member;
         this.content = builder.content;
     }
+
+    public PortfolioDTO convert(Portfolio portfolio){
+
+        PortfolioDTO portfolioDTO = new PortfolioDTO();
+
+        portfolioDTO.setPid(portfolio.getPid());
+        portfolioDTO.setMember(portfolio.getMember());
+        portfolioDTO.setContent(portfolio.getContent());
+
+        return portfolioDTO;
+    }
+
 }

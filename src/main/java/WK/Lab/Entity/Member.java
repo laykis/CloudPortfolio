@@ -1,5 +1,6 @@
 package WK.Lab.Entity;
 
+import WK.Lab.DTO.MemberDTO;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -128,6 +129,25 @@ public class Member {
         this.gitToken = builder.gitToken;
         this.des = builder.des;
         this.memberPortfolio = builder.memberPortfolio;
+    }
+
+    public MemberDTO convert(Member member){
+
+        MemberDTO memberDTO = new MemberDTO();
+
+        memberDTO.setUid(member.getUid());
+        memberDTO.setMemberId(member.getMemberId());
+        memberDTO.setMemberPw(member.getMemberPw());
+        memberDTO.setMemberName(member.getMemberName());
+        memberDTO.setPhoneNumber(member.getPhoneNumber());
+        memberDTO.setEmail(member.getEmail());
+        memberDTO.setSex(member.getSex());
+        memberDTO.setAge(member.getAge());
+        memberDTO.setGitToken(member.getGitToken());
+        memberDTO.setDes(member.getDes());
+        memberDTO.setMemberPortfolio(member.getMemberPortfolio());
+
+        return memberDTO;
     }
 
 }
